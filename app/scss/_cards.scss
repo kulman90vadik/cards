@@ -1,0 +1,115 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+    
+}
+
+
+.card {
+    min-width: 265px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    color: #838383;
+    padding: 30px 22px 35px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    font-family: $Roboto;
+    height: 100%;
+    
+    &--active {
+        color: #fff;
+        background-color: #3cde97;
+        & .card__icon {
+            background-color: rgba(#000, 0.2);
+        }
+        & .card__icon-star {
+            fill: #fff;
+        }
+        & .card__item {
+            &::after {
+                border: none;
+                width: 20px;
+                height: 20px;
+                @include bg;
+                background-image: url(../images/check-active.svg);
+            }
+        }
+    }
+
+    &__top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    &__icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+    }
+
+    &__icon-star {
+        margin: auto;
+        fill: #45a0eb;
+        width: 28px;
+        height: 28px;
+    }
+
+    &__title {
+        font-size: 33px;
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        margin-bottom: 25px;
+    }
+
+    &__item {
+        position: relative;
+        padding-right: 38px;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            right: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 2px solid #838383;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__description {
+        margin-top: auto;
+        font-size: 15px;
+    }
+
+}
